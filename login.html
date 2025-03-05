@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Smart To-Do Task Scheduler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        .login-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .login-container h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Form Styles */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-group {
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .input-group input:focus {
+            border-color: #000000;
+        }
+        .input-group label {
+            position: absolute;
+            left: 12px;
+            top: -10px;
+            background: #ffffff;
+            padding: 0 4px;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        /* Links */
+        .forgot-password {
+            text-align: right;
+            margin: 10px 0;
+        }
+        .forgot-password a {
+            color: #555555;
+            font-size: 14px;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #555555;
+        }
+        .signup-link a {
+            color: #000000;
+            font-weight: 600;
+        }
+
+      
+        .login-btn {
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #000000;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-btn:hover {
+            opacity: 0.9;
+        }
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #ffffff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .social-btn:hover {
+            background: #f5f5f5;
+        }
+
+       
+        .error-message {
+            color: #ff4444;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome Back</h1>
+        <form class="login-form" id="loginForm">
+            <div class="input-group">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="forgot-password">
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-btn">Log In</button>
+            <div class="social-login">
+                <button type="button" class="social-btn">
+                    <i class="fab fa-google"></i>
+                </button>
+                <button type="button" class="social-btn">
+                    <i class="fab fa-github"></i>
+                </button>
+            </div>
+            <div class="signup-link">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </div>
+        </form>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                errorMessage.textContent = "Please fill in all fields.";
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Simulate API call
+            errorMessage.style.display = 'none';
+            loginForm.querySelector('.login-btn').textContent = 'Logging in...';
+            
+            setTimeout(() => {
+                loginForm.querySelector('.login-btn').textContent = 'Log In';
+                // Redirect to dashboard on success
+                window.location.href = 'dashboard.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
