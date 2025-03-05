@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart To-Do Task Scheduler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            color: #000000;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555555;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .cta-buttons button {
+            padding: 14px 28px;
+            border: 2px solid #000000;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 8px;
+            background: transparent;
+            color: #000000;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .cta-buttons button:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+        .feature-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e0e0e0;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        .feature-card p {
+            font-size: 16px;
+            color: #555555;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+        footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Smart To-Do Task Scheduler</h1>
+        <p>Manage your tasks efficiently with intelligent scheduling and prioritization.</p>
+        <div class="cta-buttons">
+            <button onclick="window.location.href='signup.html'">Get Started</button>
+            <button onclick="window.location.href='login.html'">Log In</button>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <h2>Automated Prioritization</h2>
+            <p>Tasks are automatically prioritized based on deadlines, dependencies, and importance.</p>
+        </div>
+        <div class="feature-card">
+            <h2>Dependency Visualization</h2>
+            <p>Visualize task dependencies to understand what needs to be done first.</p>
+        </div>
+        <div class="feature-card">
+            <h2>Real-Time Recommendations</h2>
+            <p>Get suggestions on which task to tackle next, updated in real-time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Smart To-Do Task Scheduler. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Example: Smooth scroll to features section
+        document.querySelector('.cta-buttons button').addEventListener('click', () => {
+            document.querySelector('.features').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
